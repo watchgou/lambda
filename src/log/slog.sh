@@ -25,5 +25,4 @@ write_log(){
 
 log_msg=$1
 
-
-write_log "$log_msg" $HOME/logs/appLog
+write_log "$log_msg" $ICU_FILE_PATH/$ICU_LOG_NAME
