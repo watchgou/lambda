@@ -21,9 +21,9 @@ start(){
     local process_ids=$(pgrep -f $app_name)
 
    if [ -z "$process_ids" ]; then
-        echo "-------------- start app failed ---------------------"
+        echo "start app failed "
     else
-        echo "-------------- start app success --------------------"
+        echo "start app success "
     fi
 }
 
@@ -33,7 +33,7 @@ stop(){
         echo "no matching process was found"
     else
         echo "$process_ids" | tee /dev/stderr | xargs -I {} kill -9 {}
-        echo "-------------- kill app success  --------------------"
+        echo "kill app success"
     fi
 
 }
