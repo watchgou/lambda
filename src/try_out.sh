@@ -1,11 +1,24 @@
 #!/bin/bash
 
-echo "Hello, World!"
+while getopts 'h:u' OPT; do
+    case $OPT in
+        u)
+            echo "--------"
+        ;;
+        h)
+            H_DIR="$OPTARG"
+        ;;
+        ?)
+           echo "$OPTARG"
+        ;;
+    esac
+done
 
-file_path=$1
+echo "$H_DIR"
 
-while fis= read -r line
-do
-    echo "$line"
+shift $((OPTIND-1))
 
-done < $file_path
+
+echo "After shift: $1"
+
+echo "After shift: $@"
