@@ -3,13 +3,15 @@
 
 write_log(){
 
-    [ ! -f ${2}.log ] && touch $2.log
+    local file_name=${2}.log
 
-	modify_date=$(stat -f "%Sm" -t "%Y%m%d" "$2.log")
+    [ ! -f ${file_name} ] && touch ${file_name}
+
+	modify_date=$(stat -f "%Sm" -t "%Y%m%d" "${file_name}")
 
 	current_date=$(date "+%Y%m%d")
 
-	[ "${modify_date}" != "${current_date}" ] && mv $2.log ${2}${modify_date}.log
+	[ "${modify_date}" != "${current_date}" ] && mv ${file_name} ${file_name}${modify_date}.log
 
 	echo "${1}" >> $2.log
 
