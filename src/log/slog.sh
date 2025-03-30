@@ -3,6 +3,8 @@
 
 write_log(){
 
+    local message="${1}"
+
     local file_name=${2}.log
 
     [ ! -f ${file_name} ] && touch ${file_name}
@@ -13,7 +15,7 @@ write_log(){
 
 	[ "${modify_date}" != "${current_date}" ] && mv ${file_name} ${file_name}${modify_date}.log
 
-	echo "${1}" >> $2.log
+	echo "${message}" >> ${file_name}
 
 }
 
