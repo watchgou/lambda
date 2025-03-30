@@ -9,11 +9,9 @@ write_log(){
 
 	current_date=$(date "+%Y%m%d")
 
-	timers=$(date "+%Y-%m-%d %H:%M:%S")
-
 	[ "${modify_date}" != "${current_date}" ] && mv $2.log ${2}${modify_date}.log
 
-	echo  "[${timers}] ${1}" >> $2.log
+	echo "${1}" >> $2.log
 
 }
 
