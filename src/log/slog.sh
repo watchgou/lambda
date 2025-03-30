@@ -13,12 +13,12 @@ write_log(){
 
 	current_date=$(date "+%Y%m%d")
 
-	[ "${modify_date}" != "${current_date}" ] && mv ${file_name} ${file_name}${modify_date}.log
+	[ "${modify_date}" != "${current_date}" ] && mv ${file_name} ${2}${modify_date}.log
 
 	echo "${message}" >> ${file_name}
 
 }
 
-log_msg=$1
+log_msg="${1}"
 
 write_log "$log_msg" $ICU_FILE_PATH/$ICU_LOG_NAME
