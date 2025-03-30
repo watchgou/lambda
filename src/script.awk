@@ -1,4 +1,4 @@
-# cat app|wc -l |xargs -I {} awk -v appd="app" -v total={} -f script.awk app
+# cat app|wc -l |xargs -I {} awk -v appd="union all" -v total={} -f script.awk app
 BEGIN{
     printf "========================================BEGIN================================================\n"
     printf "select sum(count)  from ("
