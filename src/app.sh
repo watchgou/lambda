@@ -4,7 +4,7 @@ export JAVA_OPTS="-Xms512m -Xmx2024m -Xss1m -XX:+UseParallelGC -Xloggc:./logs/gc
 
 export APP_CONF="./config/application.yml,./config/application-gauss.yml"
 
-export JAVA_HOME="xxxxxxx"
+export JAVA_HOME="java"
 
 simpler_command=$1
 
@@ -40,11 +40,7 @@ stop(){
 
 main(){
 
-    if [ ! -d "./logs" ];
-    then
-        echo "creating logs directory"
-        mkdir -p ./logs
-    fi
+    [ ! -d "./logs" ] && mkdir -p ./logs
 
     case $simpler_command in
       start)
