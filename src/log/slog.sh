@@ -7,7 +7,7 @@ write_log(){
 
     local file_name=${2}.log
 
-    [ ! -f ${file_name} ] && touch ${file_name}
+    [ -f ${file_name} ] || touch ${file_name}
 
 	modify_date=$(stat -f "%Sm" -t "%Y%m%d" "${file_name}")
 
