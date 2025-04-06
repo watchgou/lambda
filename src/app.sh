@@ -1,4 +1,4 @@
-
+#!/bin/bash
 
 export JAVA_OPTS="-Xms512m -Xmx2024m -Xss1m -XX:+UseParallelGC -Xloggc:./logs/gc.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintGCTimeStamps"
 
